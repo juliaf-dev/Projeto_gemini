@@ -8,7 +8,20 @@ export const gerarConteudoMateria = async (tema) => {
   try {
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
     const prompt = `Gere um conteúdo educacional detalhado sobre ${tema}.
-O conteúdo deve ser estruturado em tópicos principais, com explicações claras e exemplos quando relevante. De enfaze em como pode cair no enem. Maximo de 200 palavras. Formate o texto com tags <p> para parágrafos e <ul>/<li> para listas.`;
+O conteúdo deve ser estruturado em tópicos principais, com explicações claras e exemplos quando relevante. 
+ Formate o texto utilizando HTML com estilo elegante e estruturado:
+
+Use tags <h2> para títulos de seções principais.
+
+Use <p> para parágrafos bem espaçados e claros.
+
+Utilize listas com <ul> e <li> para tópicos.
+
+Aplique negrito com <strong> para destacar pontos importantes.
+
+Evite blocos de texto longos: quebre em partes fáceis de ler.
+
+Mantenha um tom didático e organizado, como um material de estudo profissional.`;
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
