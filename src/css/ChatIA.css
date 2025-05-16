@@ -1,0 +1,128 @@
+.chatia-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+}
+
+/* Botão flutuante */
+.chat-toggle {
+  background-color: #3b82f6;
+  color: white;
+  font-size: 28px;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.chat-toggle:hover {
+  background-color: #2563eb;
+}
+
+/* Caixa do chat expandido */
+.chat-box {
+  width: 350px;
+  height: 450px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Cabeçalho do chat */
+.chat-header {
+  background-color: #3b82f6;
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Área das mensagens */
+.chat-mensagens {
+  flex-grow: 1;
+  padding: 10px 15px;
+  overflow-y: auto;
+  background-color: #f0f4ff;
+  font-size: 14px;
+  color: #222;
+}
+
+.mensagem {
+  margin-bottom: 15px;
+}
+
+.mensagem p {
+  margin: 4px 0;
+}
+
+.mensagem p strong {
+  color: #1e40af;
+}
+
+/* Formulário de entrada */
+form {
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: none;
+  font-size: 14px;
+}
+
+form input[type="text"]:focus {
+  outline: none;
+}
+
+form button {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #2563eb;
+}
+.mensagem.aluno p {
+  background-color: #dbeafe; /* azul claro */
+  color: #1e40af;
+  padding: 8px 12px;
+  border-radius: 12px 12px 0 12px;
+  max-width: 80%;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.mensagem.professor p {
+  background-color: #f3f4f6; /* cinza claro */
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 12px 12px 12px 0;
+  max-width: 80%;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
