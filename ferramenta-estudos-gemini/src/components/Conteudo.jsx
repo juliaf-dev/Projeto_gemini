@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { gerarConteudoMateria } from "../controllers/mainController";
 import ChatIA from "./ChatIA";
 import "../css/Conteudo.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSlidersH, faAtom, faBrain, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faSlidersH, faAtom, faBrain, faLightbulb, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 function Conteudo() {
   const { state } = useLocation();
+  const navigate = useNavigate();
   const [conteudo, setConteudo] = useState("");
   const [carregando, setCarregando] = useState(true);
   const [nivelComplexidade, setNivelComplexidade] = useState(2);
@@ -33,7 +34,6 @@ function Conteudo() {
           prompt += `introdutório (nível básico):
           - Linguagem simples e acessível
           - Conceitos fundamentais apenas
-          - Máximo 3 tópicos principais
           - Exemplos do cotidiano`;
         } else if (nivelComplexidade === 2) {
           prompt += `intermediário:
@@ -49,13 +49,6 @@ function Conteudo() {
           - Referências acadêmicas
           - Aplicações complexas`;
         }
-
-        prompt += `\n\nFormate com HTML usando:
-        - <h2> para títulos principais
-        - <h3> para subtítulos
-        - <p> para parágrafos
-        - <ul>/<li> para listas
-        - <strong> para ênfase`;
 
         const texto = await gerarConteudoMateria(prompt);
         setConteudo(texto);
@@ -76,6 +69,13 @@ function Conteudo() {
   return (
     <div className="conteudo-creativo">
       <div className="hero-tema">
+        <button 
+          onClick={() => navigate(-1)} 
+          className="btn-voltar"
+          aria-label="Voltar"
+        >
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
         <div className="hero-icon">
           <FontAwesomeIcon icon={icone} />
         </div>

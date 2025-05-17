@@ -56,29 +56,35 @@
 .chat-header {
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
   color: white;
-  padding: 10px 15px; /* Reduzi o padding (era 18px 20px) */
+  padding: 10px 15px; 
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px; /* Adicionei gap para controlar o espaçamento entre os elementos */
 }
 
-/* Se você quiser deixar ainda mais compacto, pode adicionar: */
 .close-btn {
-  padding: 4px; /* Reduz o padding do botão */
-  margin-right: -4px; /* Compensa o espaçamento */
-}
-
-.chat-title {
-  padding: 0; /* Remove qualquer padding interno */
-  margin: 0; /* Remove margens */
-  font-size: 0.95rem; /* Opcional: reduz um pouco o tamanho da fonte */
+  background: none;
+  border: none;
+  color: #0a0a0a; 
+  cursor: pointer;
+  font-size: 1.4rem; 
+  transition: all 0.3s;
+  padding: 5px;
 }
 
 .close-btn:hover {
-  opacity: 1;
-  transform: rotate(90deg);
+  color: #ff4444; 
+  transform: scale(1.1);
 }
+
+
+.chat-title {
+  padding: 0; 
+  margin: 0; 
+  font-size: 0.95rem; 
+}
+
 
 .chat-mensagens {
   flex: 1;

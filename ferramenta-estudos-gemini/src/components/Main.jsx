@@ -39,6 +39,9 @@ function Main() {
             Gerar conteúdo
           </button>
         </form>
+        <div className="Apresentação">
+          <p>Esta é uma ferramenta de estudos inteligente que utiliza o Google Gemini para gerar conteúdos personalizados em diferentes níveis de complexidade, além de disponibilizar um chat personalizado para tirar duvidas. Desenvolvido na Imersão Alura, une tecnologia IA e educação para democratizar o conhecimento.</p>
+        </div>
       </div>
     </div>
   );

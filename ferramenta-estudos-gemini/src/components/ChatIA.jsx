@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { gerarRespostaIA } from "../controllers/mainController";
 import "../css/ChatIA.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faComments, faTimesCircle, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faComments, faCircleXmark, faPaperPlane, faUserGraduate  } from '@fortawesome/free-solid-svg-icons';
 
 function ChatIA({ tema }) {
   const [expandido, setExpandido] = useState(false);
@@ -76,7 +76,7 @@ function ChatIA({ tema }) {
         <div className="chat-box">
           <div className="chat-header">
             <button className="close-btn" onClick={() => setExpandido(false)}>
-              <FontAwesomeIcon icon={faTimesCircle} />
+              <FontAwesomeIcon icon={faCircleXmark} />
             </button>
             <div className="chat-title">
               <span>Assistente estudos</span>
@@ -90,6 +90,7 @@ function ChatIA({ tema }) {
                 <div className="mensagem-conteudo">
                   {msg.origem === 'ia' && (
                     <div className="mensagem-cabecalho">
+                      <FontAwesomeIcon icon={faUserGraduate} className="assistant-icon" />
                       <span>Assistente:</span>
                     </div>
                   )} 
@@ -122,7 +123,7 @@ function ChatIA({ tema }) {
       ) : (
         <button className="chat-toggle" onClick={() => setExpandido(true)}>
           <FontAwesomeIcon icon={faComments} className="toggle-icon" />
-          <span>Assistente de {tema}</span>
+          <span>Assistente de estudos</span>
         </button>
       )}
     </div>
